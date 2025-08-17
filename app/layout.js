@@ -1,14 +1,12 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import {JetBrains_Mono} from "next/font/google";
+import Header from "@/components/Header";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const jetBrains_Mono = JetBrains_Mono({
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  Weight: ["100", "200", "300", "400", "500", "600", "700"],
+  variable: "--font-jetbrains-mono",
+  // variable: "--font-jetbrainsMono",  
 });
 
 export const metadata = {
@@ -19,7 +17,8 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body className={jetBrains_Mono.variable}>
+        <Header />
         {children}
       </body>
     </html>
