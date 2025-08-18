@@ -70,7 +70,7 @@ const Home = () => {
               |
             </span>
             <h1 className="h1 mb-6">
-              Hello I'm <br/> <span className="text-accent">David Agbemuko</span>
+              Hello I&apos;m <br/> <span className="text-accent">David Agbemuko</span>
             </h1>
             <p className="max-w-[500px] mb-9 text-white/80">
               I think out Systems from end to end, ensuring I am able to provide its smooth development and operation across its entire lifecyle.

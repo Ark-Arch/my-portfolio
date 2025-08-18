@@ -7,5 +7,5 @@ const nextConfig = {
   distDir: 'out',
 };
 
-module.exports = nextConfig;
+export default nextConfig;
 
