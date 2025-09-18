@@ -10,9 +10,10 @@ import Photo from "@/components/Photo";
 const roles = [
   "DevOps Engineer",
   "Cloud Engineer",
-  "Solutions Architect",
-  "Software Developer",
-  "Technical Business Analyst",
+  "AWS Cloud Consultant",
+  // "Solutions Architect",
+  // "Software Developer",
+  // "Technical Business Analyst",
   "Systems Engineer",
 ]
 
