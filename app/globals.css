@@ -24,6 +24,11 @@
     -webkit-text-stroke: 1px red;
   }
 
+  html {
+  scroll-behavior: smooth;
+  }
+
+
   /* :root  {
 
     --background: 0 0% 100%;

@@ -7,10 +7,11 @@ import { CiMenuFries} from "react-icons/ci"
 
 const links = [
   { href: "/", label: "home" },
-  { href: "/services", label: "services" },
-  { href: "/resume", label: "resume" },
-  { href: "/work", label: "work" },
-  { href: "/contact", label: "contact" },
+  // { href: "/services", label: "services" },
+  // { href: "/resume", label: "resume" },
+  // { href: "/work", label: "work" },
+  // { href: "/contact", label: "contact" },
+  { href: "http://34.243.75.152:5000/", label: "legacy_resume"}
 ]
 
 const MobileNav = () => {
@@ -37,10 +38,10 @@ const MobileNav = () => {
             <nav className="flex flex-col justify-center  items-center gap-8">
               {links.map((link, index) => {
                 return (
-                <Link href={link.href} key={index} className={`${link.href === pathname && 
-                    "text-accent border-b-2 border-accent"} capitalize font-medium hover:text-accent transition-all`}>
-                  {link.label}
-                </Link> 
+                  <Link href={link.href} key={index} className={`${link.href === pathname && 
+                      "text-accent border-b-2 border-accent"} capitalize font-medium hover:text-accent transition-all`}>
+                    {link.label}
+                  </Link>
                 )              
               })
               }

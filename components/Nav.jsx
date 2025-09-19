@@ -9,10 +9,11 @@ import Contact from "@/app/contact/page"
 
 const links = [
   { href: "/", label: "home" },
-  { href: "/services", label: "services" },
-  { href: "/resume", label: "resume" },
-  { href: "/work", label: "work" },
-  { href: "/contact", label: "contact" },
+  // { href: "/services", label: "services" },
+  // { href: "/resume", label: "resume" },
+  // { href: "/work", label: "work" },
+  // { href: "/contact", label: "contact" },
+  { href: "http://34.243.75.152:5000/", label: "legacy_resume"}
 ]
 
 const Nav = () => {

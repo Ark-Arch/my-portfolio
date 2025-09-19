@@ -17,8 +17,8 @@ const Header = () => {
           {/* Desktop Nav and hire button*/}
           <div className="hidden xl:flex items-center gap-8">
             <Nav />
-            <Link href="/">
-              <Button className="bg-red-500 hover:bg-white hover:text-red-700">Open In Terminal</Button>
+            <Link href="/#adr-section">
+              <Button className="bg-red-500 hover:bg-white hover:text-red-700">View Architecture</Button>
             </Link>
           </div>
 
