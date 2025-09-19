@@ -1,10 +1,18 @@
 "use client";
 
+import { useEffect } from "react";
+import { useState } from "react";
 import CountUp from "react-countup";
 
-const stats = [
+
+const API_URL = "https://s6n2lxybb7.execute-api.eu-west-1.amazonaws.com/visitors";
+
+const Stats = () => {
+    const [visitCount, setVisitCount] = useState(0);
+
+    const stats = [
     {
-        num: 20,
+        num: visitCount,
         text: "People Visited this site",
     },
     {
@@ -27,10 +35,26 @@ const stats = [
     //     num: 500,
     //     text: "Code committed",
     // }
+    ];
 
-]
+    useEffect(() => {
+        // This is to ensure that the CountUp animation restarts when the component is mounted
+        const updateVisitorCount = async () => {
+            try {
+                await fetch(API_URL, { method: 'POST' });
+                const res = await fetch(API_URL);
+                const data = await res.json();
+                console.log('Visitor count data:', data);
+                setVisitCount(data.visit_count);
+            } catch (error) {
+                console.error('Error updating visitor count:', error);
+            } finally {
+                ""; // No action needed here;
+            }
+        };
 
-const Stats = () => {
+        updateVisitorCount();
+    }, []);
   return (
     <section className="pt-4 pb-12 xl:pt-0 xl:pb-0">
         <div className="container mx-auto">
