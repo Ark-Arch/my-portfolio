@@ -1,5 +1,7 @@
 # Portfolio Website - README
 
+http://resume.davidagbemuko.com.s3-website-eu-west-1.amazonaws.com/
+
 ## 1. Technology Stack
 
 This project is built using the following stack:
