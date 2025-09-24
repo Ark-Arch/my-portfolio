@@ -1,6 +1,6 @@
 # Portfolio Website - README
 
-http://resume.davidagbemuko.com.s3-website-eu-west-1.amazonaws.com/
+https://davidagbemuko.com
 
 ## 1. Technology Stack
 
