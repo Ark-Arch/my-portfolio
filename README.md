@@ -2,17 +2,27 @@
 
 https://davidagbemuko.com
 
+## Table of Contents
+- [Overview](#overview)
+- [Key Features](#key-features)
+- [Technology Stack](#technology-stack)
+- [Architecture](#architecture)
+- [Deployment Strategy](#deployment-strategy)
+- [CI/CD Workflow](#cicd-workflow)
+
+
 ## Overview
 This project implements a frontend website as part of my Cloud Resume Challenge. The website serves as the presentation layer, providing a clean and responsive user interface to display my resume and interactive features. It is designed with modern frontend development practices and integrates with cloud-based backend services to meet the full-stack requirements of the challenge.
 
-## 1. Key Features  
+## Key Features  
 
 - **Cloud Integration:** The website is hosted on an **Amazon S3 bucket** and served through **AWS CloudFront** for secure, low-latency global distribution. It connects to a backend service built on an **AWS serverless architecture**.  
 - **Visitor Counter:** Displays a **dynamic visitor count**, retrieved via a public API exposed through **AWS API Gateway** and powered by serverless compute with persistent storage.  
 - **CI/CD Pipeline:** Implements an **automated deployment pipeline**, ensuring changes are delivered with **speed, repeatability, and reliability**.  
 
+---
 
-## 1. Technology Stack
+## Technology Stack
 
 This project is built using the following stack:
 
@@ -25,13 +35,15 @@ This project is built using the following stack:
 - **Package Management:** [npm](https://www.npmjs.com/)
 
 ---
-## 2. Architecture
+## Architecture Design
 - **Provider:** AWS
 - **Resources:** S3 Bucket, IAM Policy, AWS CloudFront, ACM Certificate, Route 53
 
 ![Architecture Diagram](image-2.png)
 
-## 2. Deployment Strategy
+---
+
+## Deployment Strategy
 
 ### Prerequisites
 Before deploying, ensure you have:
@@ -74,7 +86,7 @@ The website is deployed using **Amazon S3 + CloudFront + Route 53** for static h
     
 ---
 
-## 3. CI/CD Workflow
+## CI/CD Workflow
 
 A CI/CD pipeline helps automate build and deployment:
 
@@ -95,7 +107,15 @@ A CI/CD pipeline helps automate build and deployment:
 ![workflow in action](image.png)
 
 ---
+## Architecture Decision Records
+1. Decision Record 1
+![Decision Record 1](image-4.png)
+2. Decision Record 2
+![Decision Record 2](image-8.png)
+3. Decision Record 3
+![Decision Record 3](image-9.png)
 
+---
 ## Summary
 
 This portfolio website leverages a modern React stack, is deployed as a static site on AWS S3, and uses a robust CI/CD pipeline for automated builds and deployments.
