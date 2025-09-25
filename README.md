@@ -2,18 +2,33 @@
 
 https://davidagbemuko.com
 
+## Overview
+This project implements a frontend website as part of my Cloud Resume Challenge. The website serves as the presentation layer, providing a clean and responsive user interface to display my resume and interactive features. It is designed with modern frontend development practices and integrates with cloud-based backend services to meet the full-stack requirements of the challenge.
+
+## 1. Key Features  
+
+- **Cloud Integration:** The website is hosted on an **Amazon S3 bucket** and served through **AWS CloudFront** for secure, low-latency global distribution. It connects to a backend service built on an **AWS serverless architecture**.  
+- **Visitor Counter:** Displays a **dynamic visitor count**, retrieved via a public API exposed through **AWS API Gateway** and powered by serverless compute with persistent storage.  
+- **CI/CD Pipeline:** Implements an **automated deployment pipeline**, ensuring changes are delivered with **speed, repeatability, and reliability**.  
+
+
 ## 1. Technology Stack
 
 This project is built using the following stack:
 
 - **Frontend:** [Next.js]
 - **Build Tool:** [Vite](https://vitejs.dev/) for fast development and optimized production builds
+- **Route 53:** to serve as the **DNS hosted zone**, and manage the authoritative name servers for my domain
+- **ACM Certificate:** Provides an **SSL/TLS certificate** via **AWS Certificate Manager (ACM)** to enable secure HTTPS communication for the website.  
+- **CloudFront Distribution:** Acts as a **content delivery network (CDN)** to cache and distribute content globally with low latency, while also integrating with ACM to enforce HTTPS.  
 - **Package Management:** [npm](https://www.npmjs.com/)
-- **Other:** [React Router](https://reactrouter.com/) for navigation
-
-All application logic, UI components, and routing are implemented in React. Styles are modularized for maintainability.
 
 ---
+## 2. Architecture
+- **Provider:** AWS
+- **Resources:** S3 Bucket, IAM Policy, AWS CloudFront, ACM Certificate, Route 53
+
+![Architecture Diagram](image-1.png)
 
 ## 2. Deployment Strategy
 
