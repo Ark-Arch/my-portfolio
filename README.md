@@ -21,6 +21,7 @@ This project is built using the following stack:
 - **Route 53:** to serve as the **DNS hosted zone**, and manage the authoritative name servers for my domain
 - **ACM Certificate:** Provides an **SSL/TLS certificate** via **AWS Certificate Manager (ACM)** to enable secure HTTPS communication for the website.  
 - **CloudFront Distribution:** Acts as a **content delivery network (CDN)** to cache and distribute content globally with low latency, while also integrating with ACM to enforce HTTPS.  
+- **GiHub Actions:** to achieve continous deployment
 - **Package Management:** [npm](https://www.npmjs.com/)
 
 ---
@@ -28,7 +29,7 @@ This project is built using the following stack:
 - **Provider:** AWS
 - **Resources:** S3 Bucket, IAM Policy, AWS CloudFront, ACM Certificate, Route 53
 
-![Architecture Diagram](image-1.png)
+![Architecture Diagram](image-2.png)
 
 ## 2. Deployment Strategy
 
