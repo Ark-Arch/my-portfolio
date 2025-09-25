@@ -4,6 +4,7 @@ import { Sheet, SheetContent, SheetTrigger, SheetHeader, SheetTitle, SheetDescri
 import { usePathname } from "next/navigation"
 import Link from "next/link"
 import { CiMenuFries} from "react-icons/ci"
+import { Button } from "./ui/button"
 
 const links = [
   { href: "/", label: "home" },
@@ -35,6 +36,9 @@ const MobileNav = () => {
                 </h1>              
               </Link>
             </div>
+            <a href="/#adr-section" className="mb-12 text-center">
+              <Button className="bg-red-500 hover:bg-white hover:text-red-700">View Architecture</Button>
+            </a>
             <nav className="flex flex-col justify-center  items-center gap-8">
               {links.map((link, index) => {
                 return (
