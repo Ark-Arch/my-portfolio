@@ -33,19 +33,45 @@ This project is built using the following stack:
 
 ## 2. Deployment Strategy
 
-The website is deployed using an **Amazon S3 bucket** as a static site host:
+### Prerequisites
+Before deploying, ensure you have:
+- An AWS account with permissions for S3, CloudFront, Route 53, and ACM.
+- A registered domain (e.g., `davidagbemuko.com`).
+- Node.js and npm installed locally.
 
-- **Build:** The React app is built using `npm run build`, generating static files in the `out` directory.
-- **Upload:** The contents of the `out` folder are uploaded to an S3 bucket configured for static website hosting.
-- **Configuration:** The S3 bucket is set with public read permissions and the correct index and error documents (typically `index.html` and `404.html`).
-- **Optional:** For custom domains, Route 53 and CloudFront can be integrated for HTTPS and caching.
+The website is deployed using **Amazon S3 + CloudFront + Route 53** for static hosting and secure delivery:
+
+- **Build:** The React app is built using `npm run build`, generating static files in the `out` (or `build`) directory.
+- **Upload:** The contents of the `out/` folder are uploaded to an S3 bucket (via AWS Console, CLI, or CI/CD).
+- **Configuration:** 
+  - The S3 bucket remains private with **Block Public Access** enabled.
+  - CloudFront is used to serve the files securely via HTTPS.
+  - The CloudFront distribution is configured with:
+    - **Origin Access Control (OAC)** to read from the bucket
+    - **Default Root Object** set to `index.html`
+    - An **ACM certificate** for HTTPS
+- **Domain Integration:** Route 53 provides DNS with alias records (`A`/`AAAA`) pointing the domain to CloudFront.
 
 **Steps:**
-1. Build the project: `npm run build`
-2. Upload `out/` contents to S3 (via AWS Console, CLI, or CI/CD)
-3. Set bucket properties for static hosting
-4. (Optional) Configure domain and CDN
-
+1. Build the project:  
+   ```bash
+   npm run build
+2. Upload the build output (out/) to s3:
+    - the bucket is not configured for a website endpoint to enforce security. instead, the rest endpoint of the bucket is used.
+    - also, the bucket is configured **private** so only the cloudfront distribution can serve the files securely via HTTPS
+    ![upload /out folder](image-1.png)
+3. Configure CloudFront:
+    - set origin to the s3 REST endpoint (**to enforce security**)
+    - Attach OAC (Origin Access Control) and update **bucket policy**
+    - Set index.html as the default root object (this is important: else, it reads access denied!)
+    - Attach ACM certificate for HTTPS
+    ![cert and root](image-5.png)
+    ![Origin Access Control Settings](image-3.png)
+4. Update Route 53:
+    - point your domain names to the CloudFront distribution (e.g. davidagbemuko.com and www.davidagbemuko.com)
+    ![Updating Route53](image-7.png)
+5. (Optional) Invalidate CloudFront cache for specific files to allow fresh servings by the cloud front
+    
 ---
 
 ## 3. CI/CD Workflow
