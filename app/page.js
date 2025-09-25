@@ -78,7 +78,7 @@ const Home = () => {
               I think out Systems from end to end, ensuring I am able to provide its smooth development and operation across its entire lifecyle.
             </p>
             <div className="flex flex-col xl:flex-row gap-8 items-center xl:items-start">
-              <a href="/assets/david_agbemuko_cv.pdf" download>
+              <a href="/assets/david_agbemuko_cv_v2.pdf" download>
               <Button variant="outline" size="lg" className="uppercase flex items-center gap-2 text-accent hover:text-white">
                 <span>Download CV</span>
                 <FiDownload/>
@@ -99,7 +99,7 @@ const Home = () => {
     <section id="adr-section" className="w-full py-12">
       <div className="flex justify-center items-center">
         <img 
-          src="/assets/image.png" 
+          src="/assets/image_v2.png" 
           alt="wave" 
           className="w-full max-w-5xl mx-auto"
         />
