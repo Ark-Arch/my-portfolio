@@ -16,7 +16,7 @@ const Stats = () => {
         text: "People Visited this site",
     },
     {
-        num: 2,
+        num: 1,
         text: "Years of Experience",
     },
     {
