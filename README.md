@@ -113,7 +113,7 @@ A CI/CD pipeline helps automate build and deployment:
 2. Decision Record 2
 ![Decision Record 2](image-8.png)
 3. Decision Record 3
-![Decision Record 3](image-9.png)
+![Decisio Record 3](image-9.png)
 
 ---
 ## Summary
